@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class HomeDetailWeather extends StatelessWidget {
-  const HomeDetailWeather({super.key});
-
+  const HomeDetailWeather(
+      {super.key, required this.speed, required this.humidity});
+  final num speed;
+  final num humidity;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -15,8 +17,8 @@ class HomeDetailWeather extends StatelessWidget {
               width: 49,
               height: 49,
             ),
-            const Text(
-              '5km/h',
+            Text(
+              '${speed.round().toString()}km/h',
               style: TextStyle(
                 fontSize: 21,
                 color: Colors.white,
@@ -31,8 +33,8 @@ class HomeDetailWeather extends StatelessWidget {
               width: 49,
               height: 49,
             ),
-            const Text(
-              '30%',
+            Text(
+              '${humidity.round().toString()}%',
               style: TextStyle(
                 fontSize: 21,
                 color: Colors.white,

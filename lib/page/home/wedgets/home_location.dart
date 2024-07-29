@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class HomeLocation extends StatelessWidget {
-  const HomeLocation({super.key});
-
+  const HomeLocation({super.key, required this.location});
+  final String location;
   @override
   Widget build(BuildContext context) {
     final df = DateFormat('dd-MM-yyyy');
@@ -14,8 +14,8 @@ class HomeLocation extends StatelessWidget {
           children: [
             Image.asset('assets/img/icons/Vector.png'),
             const SizedBox(width: 10),
-            const Text(
-              'HO CHI MINH CITY',
+            Text(
+              location,
               style: TextStyle(
                 fontSize: 28,
                 color: Colors.white,

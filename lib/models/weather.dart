@@ -4,18 +4,18 @@ import 'dart:convert';
 class Weather {
   int id;
   String main;
-  String decription;
+  String description;
   Weather({
     required this.id,
     required this.main,
-    required this.decription,
+    required this.description,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
       'main': main,
-      'decription': decription,
+      'description': description,
     };
   }
 
@@ -23,7 +23,7 @@ class Weather {
     return Weather(
       id: map['id'] as int,
       main: map['main'] as String,
-      decription: map['decription'] as String,
+      description: map['description'] as String,
     );
   }
 
@@ -103,7 +103,7 @@ class Wind {
 
 class WeatherData {
   int id;
-  List<Weather> weathers;
+  List<Weather> weather;
   String base;
   Main main;
   int visibility;
@@ -112,7 +112,7 @@ class WeatherData {
   int cod;
   WeatherData({
     required this.id,
-    required this.weathers,
+    required this.weather,
     required this.base,
     required this.main,
     required this.visibility,
@@ -124,7 +124,7 @@ class WeatherData {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
-      'weathers': weathers.map((x) => x.toMap()).toList(),
+      'weather': weather.map((x) => x.toMap()).toList(),
       'base': base,
       'main': main.toMap(),
       'visibility': visibility,
@@ -137,8 +137,8 @@ class WeatherData {
   factory WeatherData.fromMap(Map<String, dynamic> map) {
     return WeatherData(
       id: map['id'] as int,
-      weathers: List<Weather>.from(
-        (map['weathers'] as List<int>).map<Weather>(
+      weather: List<Weather>.from(
+        (map['weather'] as List).map<Weather>(
           (x) => Weather.fromMap(x as Map<String, dynamic>),
         ),
       ),
