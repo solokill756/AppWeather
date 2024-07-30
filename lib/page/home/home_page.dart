@@ -29,14 +29,15 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         alignment: Alignment.center,
         decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Color(0xff1D6CF3),
-            Color(0xff19D2FE),
-          ],
-        )),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xff1D6CF3),
+              Color(0xff19D2FE),
+            ],
+          ),
+        ),
         child: FutureBuilder(
           future: context.read<WeatherProvider>().getWeatherCurrent(),
           initialData: null,

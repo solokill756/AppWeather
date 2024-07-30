@@ -28,8 +28,14 @@ class _BottomNavigationCustomState extends State<BottomNavigationCustom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: listWidget[position],
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: position,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white54,
+        backgroundColor: Colors.white24,
+        elevation: 0,
         items: listItem,
         onTap: (index) {
           setState(() {

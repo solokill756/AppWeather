@@ -1,3 +1,4 @@
+import 'package:appweather/apps/config/theme_custom.dart';
 import 'package:appweather/page/bottom_navigation_custom/bottom_custom.dart';
 import 'package:appweather/page/home/home_page.dart';
 import 'package:appweather/providers/weather_provider.dart';
@@ -11,9 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => WeatherProvider(),
-      child: const MaterialApp(
+      child: MaterialApp(
+        theme: ThemeCustom.themeLight,
         debugShowCheckedModeBanner: false,
-        home: BottomNavigationCustom(),
+        home: const BottomNavigationCustom(),
       ),
     );
   }
